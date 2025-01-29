@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-theme="light" data-user-status="active" data-collaboration="enabled">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>WriteSense - Intelligent Document Editor</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="description" content="WriteSense - The intelligent way to write, collaborate, and create documents">
+  <meta name="keywords" content="document editor, AI writing, collaboration, real-time editing">
+  <meta name="author" content="WriteSense">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://writesense.app">
+  <meta property="og:title" content="WriteSense - Intelligent Document Editor">
+  <meta property="og:description" content="WriteSense - The intelligent way to write, collaborate, and create documents">
+  <meta property="og:image" content="images/writesense-preview.png">
+  <meta property="og:image:alt" content="WriteSense editor interface">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://writesense.app">
+  <meta name="twitter:title" content="WriteSense - Intelligent Document Editor">
+  <meta name="twitter:description" content="WriteSense - The intelligent way to write, collaborate, and create documents">
+  <meta name="twitter:image" content="images/writesense-preview.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/editor.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2563EB">
+  <meta name="msapplication-TileColor" content="#2563EB">
+  <meta name="theme-color" content="#2563EB">
+
+  <!-- PWA -->
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="fonts/icons.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="images/logo.svg" as="image">
+</head>
+
+<body class="bg-gray-50" data-user="SyncFocus17" data-collaboration-status="online">
+<!-- Skip to main content for accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="app-container" role="application" aria-label="WriteSense Document Editor">
+  <!-- Application Header -->
+  <header class="main-nav" role="banner">
+    <div class="nav-left">
+      <div class="logo-section" role="img" aria-label="WriteSense Logo">
+        <img src="images/logo.svg" alt="WriteSense Logo" width="32" height="32" class="logo-section__image">
+        <div class="logo-section__text">
+          <span class="logo-section__brand">WriteSense</span>
+          <span class="logo-section__version">v2.0</span>
+        </div>
+      </div>
+
+      <div class="document-controls" role="toolbar" aria-label="Document Controls">
+        <div class="control-group">
+          <button class="btn btn-primary btn--with-icon" data-action="new-document">
+            <i class="icon icon-plus" aria-hidden="true"></i>
+            <span>New Document</span>
+            <span class="keyboard-shortcut" aria-hidden="true">⌘N</span>
+          </button>
+          <button class="btn btn-secondary btn--with-icon" data-action="show-templates">
+            <i class="icon icon-template" aria-hidden="true"></i>
+            <span>Templates</span>
+          </button>
+        </div>
+        <div class="control-group">
+          <button class="btn btn-icon" data-action="save" title="Save (⌘S)">
+            <i class="icon icon-save" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-icon" data-action="share" title="Share">
+            <i class="icon icon-share" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-icon" data-action="export" title="Export">
+            <i class="icon icon-export" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <div class="search-bar">
+        <div class="search-input-wrapper">
+          <i class="icon icon-search" aria-hidden="true"></i>
+          <input type="search" class="search-input" placeholder="Search documents..." aria-label="Search documents">
+          <kbd class="keyboard-shortcut">⌘K</kbd>
+        </div>
+      </div>
+
+      <div class="collaboration-status" role="status" aria-live="polite">
+        <span class="status-indicator online" aria-hidden="true"></span>
+        <span>1 collaborator(s)</span>
+      </div>
+      <div class="user-menu" role="menu" tabindex="0">
+        <div class="user-info">
+          <img src="images/avatar.jpg" alt="" class="avatar" width="32" height="32" loading="lazy">
+          <div class="user-details">
+            <span class="username">SyncFocus17</span>
+            <span class="user-status">Pro Member</span>
+          </div>
+        </div>
+        <i class="icon icon-chevron-down" aria-hidden="true"></i>
+      </div>
+
+      <button class="btn btn-icon theme-toggle" title="Toggle theme" aria-label="Toggle theme">
+        <i class="icon icon-moon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main id="main-content" class="editor-layout" role="main">
+    <!-- Left Sidebar -->
+    <aside class="sidebar" role="complementary" aria-label="Document Navigation">
+      <div class="sidebar-header">
+        <h2 class="sidebar-title">Workspace</h2>
+        <button class="btn btn-icon sidebar-collapse" aria-label="Collapse sidebar">
+          <i class="icon icon-chevron-left"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-content">
+        <nav class="sidebar-section">
+          <div class="section-header">
+            <h3 id="documents-heading">Documents</h3>
+            <button class="btn btn-icon" title="Create folder">
+              <i class="icon icon-folder-plus"></i>
+            </button>
+          </div>
+
+          <div class="document-tree">
+            <div class="folder-group">
+              <div class="folder-header">
+                <i class="icon icon-folder"></i>
+                <span>Projects</span>
+                <span class="item-count">3</span>
+              </div>
+              <ul class="document-list" role="list" aria-labelledby="documents-heading">
+                <li class="document-item active" role="listitem" aria-current="page">
+                  <i class="icon icon-file-text"></i>
+                  <span class="document-title">Project Proposal</span>
+                  <span class="document-meta">Updated 2m ago</span>
+                </li>
+                <li class="document-item" role="listitem">
+                  <i class="icon icon-file-text"></i>
+                  <span class="document-title">Meeting Notes</span>
+                  <span class="document-meta">Updated yesterday</span>
+                </li>
+                <li class="document-item" role="listitem">
+                  <i class="icon icon-file-text"></i>
+                  <span class="document-title">Research Paper</span>
+                  <span class="document-meta">Updated last week</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <nav class="sidebar-section">
+          <div class="section-header">
+            <h3>Navigation</h3>
+          </div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link active">
+                <i class="icon icon-home"></i>
+                <span>Editor</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="themes.html" class="nav-link">
+                <i class="icon icon-palette"></i>
+                <span>Themes</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="settings.html" class="nav-link">
+                <i class="icon icon-settings"></i>
+                <span>Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="templates.html" class="nav-link">
+                <i class="icon icon-template"></i>
+                <span>Templates</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="ai-settings.html" class="nav-link">
+                <i class="icon icon-bot"></i>
+                <span>AI Configuration</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <section class="sidebar-section">
+          <div class="section-header">
+            <h3 id="ai-heading">AI Assistant</h3>
+            <button class="btn btn-icon" title="AI Settings">
+              <i class="icon icon-settings"></i>
+            </button>
+          </div>
+
+          <div class="ai-controls" role="group" aria-label="AI Features">
+            <div class="control-item">
+              <label class="toggle">
+                <input type="checkbox" checked aria-describedby="grammar-desc">
+                <span class="toggle-track">
+                  <span class="toggle-thumb"></span>
+                </span>
+                <span class="toggle-label">Grammar Check</span>
+              </label>
+              <span id="grammar-desc" class="feature-description">Real-time grammar and spelling checks</span>
+            </div>
+
+            <div class="control-item">
+              <label class="toggle">
+                <input type="checkbox" checked aria-describedby="style-desc">
+                <span class="toggle-track">
+                  <span class="toggle-thumb"></span>
+                </span>
+                <span class="toggle-label">Style Suggestions</span>
+              </label>
+              <span id="style-desc" class="feature-description">Writing style improvements</span>
+            </div>
+
+            <div class="ai-stats">
+              <div class="stat-item">
+                <span class="stat-label">Suggestions Today</span>
+                <span class="stat-value">24</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Time Saved</span>
+                <span class="stat-value">1.5h</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="storage-info">
+          <div class="storage-bar">
+            <div class="storage-bar__filled" style="width: 65%"></div>
+          </div>
+          <span class="storage-text">6.5 GB of 10 GB used</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Editor Container -->
+    <div class="editor-container" role="application" aria-label="Document Editor">
+      <!-- Editor Toolbar -->
+      <div class="editor-toolbar" role="toolbar" aria-label="Formatting Tools">
+        <!-- Toolbar Groups with ARIA labels -->
+      </div>
+
+      <!-- Editor Content -->
+      <div class="editor-content"
+           contenteditable="true"
+           role="textbox"
+           aria-multiline="true"
+           aria-label="Document content">
+        <h1>Project Proposal</h1>
+        <p>Start typing your document here...</p>
+      </div>
+
+      <!-- AI Suggestions Panel -->
+      <div class="ai-panel" role="complementary" aria-label="AI Suggestions">
+        <!-- AI Suggestions Content -->
+      </div>
+    </div>
+
+    <!-- Collaboration Panel -->
+    <aside class="collaboration-panel" role="complementary" aria-label="Collaboration">
+      <div class="panel-header">
+        <h3>Collaboration</h3>
+        <div class="panel-actions">
+          <button class="btn btn-icon" title="Video call">
+            <i class="icon icon-video"></i>
+          </button>
+          <button class="btn btn-icon" title="Share">
+            <i class="icon icon-share"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="panel-content">
+        <div class="active-users">
+          <h4>Active Now</h4>
+          <div class="user-list">
+            <div class="user-item online">
+              <img src="images/avatar1.jpg" alt="" class="avatar">
+              <div class="user-info">
+                <span class="user-name">Alex Chen</span>
+                <span class="user-activity">Editing</span>
+              </div>
+            </div>
+            <div class="user-item away">
+              <img src="images/avatar2.jpg" alt="" class="avatar">
+              <div class="user-info">
+                <span class="user-name">Sarah Kim</span>
+                <span class="user-activity">Away</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-section">
+          <div class="chat-messages" role="log" aria-label="Chat messages">
+            <div class="message incoming">
+              <img src="images/avatar1.jpg" alt="" class="avatar">
+              <div class="message-content">
+                <div class="message-header">
+                  <span class="message-author">Alex Chen</span>
+                  <time class="message-time">16:30</time>
+                </div>
+                <p>Should we add more details to the third section?</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-input-area">
+            <div class="input-wrapper">
+              <input type="text"
+                     class="chat-input"
+                     placeholder="Type a message..."
+                     aria-label="Type a message">
+              <button class="btn btn-icon" title="Add emoji">
+                <i class="icon icon-emoji"></i>
+              </button>
+              <button class="btn btn-icon" title="Attach file">
+                <i class="icon icon-paperclip"></i>
+              </button>
+            </div>
+            <button class="btn btn-primary btn-send">
+              <i class="icon icon-send"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Activity Feed Drawer -->
+  <div class="activity-drawer" role="complementary" aria-label="Activity feed" hidden>
+    <div class="drawer-header">
+      <h3>Activity</h3>
+      <button class="btn btn-icon" aria-label="Close activity feed">
+        <i class="icon icon-x"></i>
+      </button>
+    </div>
+    <div class="activity-list">
+      <!-- Activity items will be dynamically inserted -->
+    </div>
+  </div>
+</div>
+
+<!-- Enhanced Modals and Overlays -->
+<div class="modal-container" id="modal-container" aria-hidden="true">
+  <div class="modal-backdrop"></div>
+  <div class="modal" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <!-- Modal content will be dynamically inserted -->
+    </div>
+  </div>
+</div>
+
+<!-- Command Palette -->
+<div class="command-palette" role="dialog" aria-label="Command palette" hidden>
+  <div class="command-input-wrapper">
+    <i class="icon icon-command"></i>
+    <input type="text" class="command-input" placeholder="Type a command...">
+    <kbd class="keyboard-shortcut">ESC</kbd>
+  </div>
+  <div class="command-results">
+    <!-- Results will be dynamically inserted -->
+  </div>
+</div>
+
+<!-- Context Menu -->
+<div class="context-menu" hidden>
+  <!-- Menu items will be dynamically inserted -->
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container" role="alert" aria-live="polite">
+  <!-- Toasts will be dynamically inserted -->
+</div>
+
+<!-- Current Time Display -->
+<div class="time-display" role="status" aria-live="polite">
+  UTC: <time datetime="2025-01-26T16:56:49Z">2025-01-26 16:56:49</time>
+</div>
+
+<!-- Error Boundary -->
+<div id="error-boundary" class="error-boundary" hidden aria-live="assertive"></div>
+
+<!-- Loading Indicator -->
+<div class="loading-overlay" hidden>
+  <div class="loading-spinner"></div>
+  <p class="loading-text">Loading...</p>
+</div>
+
+<!-- Application Scripts -->
+<script src="js/vendor/modernizr-3.12.0.min.js" defer></script>
+<script src="js/app.js" type="module"></script>
+
+<!-- Service Worker Registration -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registration successful');
+        })
+        .catch(err => {
+          console.error('ServiceWorker registration failed:', err);
+        });
+    });
+  }
+</script>
+</body>
+</html>

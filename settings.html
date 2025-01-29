@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-theme="light" data-user-status="active" data-collaboration="enabled">
+
+<head>
+  <!-- Head content remains the same as the main file -->
+  <title>WriteSense - Settings</title>
+</head>
+
+<body class="bg-gray-50" data-user="SyncFocus17" data-collaboration-status="online">
+<!-- Skip to main content for accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="app-container" role="application" aria-label="WriteSense Settings">
+  <!-- Application Header -->
+  <header class="main-nav" role="banner">
+    <div class="nav-left">
+      <div class="logo-section" role="img" aria-label="WriteSense Logo">
+        <img src="images/logo.svg" alt="WriteSense Logo" width="32" height="32" class="logo-section__image">
+        <div class="logo-section__text">
+          <span class="logo-section__brand">WriteSense</span>
+          <span class="logo-section__version">v2.0</span>
+        </div>
+      </div>
+
+      <div class="document-controls" role="toolbar" aria-label="Document Controls">
+        <div class="control-group">
+          <a href="index.html" class="btn btn-secondary btn--with-icon">
+            <i class="icon icon-arrow-left" aria-hidden="true"></i>
+            <span>Back to Editor</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <div class="user-menu" role="menu" tabindex="0">
+        <div class="user-info">
+          <img src="images/avatar.jpg" alt="" class="avatar" width="32" height="32" loading="lazy">
+          <div class="user-details">
+            <span class="username">SyncFocus17</span>
+            <span class="user-status">Pro Member</span>
+          </div>
+        </div>
+        <i class="icon icon-chevron-down" aria-hidden="true"></i>
+      </div>
+
+      <button class="btn btn-icon theme-toggle" title="Toggle theme" aria-label="Toggle theme">
+        <i class="icon icon-moon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main id="main-content" class="settings-layout" role="main">
+    <div class="page-header">
+      <h1>Settings</h1>
+      <p class="page-description">Manage your WriteSense settings</p>
+    </div>
+
+    <div class="settings-container">
+      <section class="user-settings">
+        <h2>User Settings</h2>
+        <form class="settings-form">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" value="SyncFocus17">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="syncfocus17@example.com">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+          </div>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+      </section>
+
+      <section class="preferences">
+        <h2>Preferences</h2>
+        <div class="preferences-controls">
+          <label class="toggle">
+            <input type="checkbox" checked>
+            <span class="toggle-track">
+              <span class="toggle-thumb"></span>
+            </span>
+            <span class="toggle-label">Enable Notifications</span>
+          </label>
+          <label class="toggle">
+            <input type="checkbox">
+            <span class="toggle-track">
+              <span class="toggle-thumb"></span>
+            </span>
+            <span class="toggle-label">Auto-Save Documents</span>
+          </label>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<!-- Application Scripts -->
+<script src="js/vendor/modernizr-3.12.0.min.js" defer></script>
+<script src="js/app.js" type="module"></script>
+
+<!-- Service Worker Registration -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registration successful');
+        })
+        .catch(err => {
+          console.error('ServiceWorker registration failed:', err);
+        });
+    });
+  }
+</script>
+</body>
+</html>

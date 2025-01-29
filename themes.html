@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-theme="light" data-user-status="active" data-collaboration="enabled">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>WriteSense - Theme Settings</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="description" content="WriteSense - Customize your writing environment with themes">
+  <meta name="keywords" content="themes, customization, document editor, user interface">
+  <meta name="author" content="WriteSense">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://writesense.app/themes.html">
+  <meta property="og:title" content="WriteSense - Theme Settings">
+  <meta property="og:description" content="Customize your writing environment with themes">
+  <meta property="og:image" content="images/writesense-themes-preview.png">
+  <meta property="og:image:alt" content="WriteSense theme customization interface">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://writesense.app/themes.html">
+  <meta name="twitter:title" content="WriteSense - Theme Settings">
+  <meta name="twitter:description" content="Customize your writing environment with themes">
+  <meta name="twitter:image" content="images/writesense-themes-preview.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/editor.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2563EB">
+  <meta name="msapplication-TileColor" content="#2563EB">
+  <meta name="theme-color" content="#2563EB">
+
+  <!-- PWA -->
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="fonts/icons.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="images/logo.svg" as="image">
+</head>
+
+<body class="bg-gray-50" data-user="SyncFocus17" data-collaboration-status="online">
+<!-- Skip to main content for accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="app-container" role="application" aria-label="WriteSense Theme Settings">
+  <!-- Application Header -->
+  <header class="main-nav" role="banner">
+    <div class="nav-left">
+      <div class="logo-section" role="img" aria-label="WriteSense Logo">
+        <img src="images/logo.svg" alt="WriteSense Logo" width="32" height="32" class="logo-section__image">
+        <div class="logo-section__text">
+          <span class="logo-section__brand">WriteSense</span>
+          <span class="logo-section__version">v2.0</span>
+        </div>
+      </div>
+
+      <div class="document-controls" role="toolbar" aria-label="Document Controls">
+        <div class="control-group">
+          <a href="index.html" class="btn btn-secondary btn--with-icon">
+            <i class="icon icon-arrow-left" aria-hidden="true"></i>
+            <span>Back to Editor</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <div class="user-menu" role="menu" tabindex="0">
+        <div class="user-info">
+          <img src="images/avatar.jpg" alt="" class="avatar" width="32" height="32" loading="lazy">
+          <div class="user-details">
+            <span class="username">SyncFocus17</span>
+            <span class="user-status">Pro Member</span>
+          </div>
+        </div>
+        <i class="icon icon-chevron-down" aria-hidden="true"></i>
+      </div>
+
+      <button class="btn btn-icon theme-toggle" title="Toggle theme" aria-label="Toggle theme">
+        <i class="icon icon-moon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main id="main-content" class="settings-layout" role="main">
+    <div class="page-header">
+      <h1>Theme Settings</h1>
+      <p class="page-description">Customize your writing environment</p>
+    </div>
+
+    <div class="settings-container">
+      <section class="theme-selection">
+        <h2>Choose Theme</h2>
+        <div class="theme-grid">
+          <div class="theme-card" data-theme="light">
+            <div class="theme-preview light"></div>
+            <h3>Light Theme</h3>
+            <button class="btn btn-primary apply-theme" data-theme="light">Apply</button>
+          </div>
+          <div class="theme-card" data-theme="dark">
+            <div class="theme-preview dark"></div>
+            <h3>Dark Theme</h3>
+            <button class="btn btn-primary apply-theme" data-theme="dark">Apply</button>
+          </div>
+          <div class="theme-card" data-theme="high-contrast">
+            <div class="theme-preview high-contrast"></div>
+            <h3>High Contrast</h3>
+            <button class="btn btn-primary apply-theme" data-theme="high-contrast">Apply</button>
+          </div>
+          <div class="theme-card" data-theme="ocean">
+            <div class="theme-preview ocean"></div>
+            <h3>Ocean</h3>
+            <button class="btn btn-primary apply-theme" data-theme="ocean">Apply</button>
+          </div>
+          <div class="theme-card" data-theme="forest">
+            <div class="theme-preview forest"></div>
+            <h3>Forest</h3>
+            <button class="btn btn-primary apply-theme" data-theme="forest">Apply</button>
+          </div>
+          <div class="theme-card" data-theme="sunset">
+            <div class="theme-preview sunset"></div>
+            <h3>Sunset</h3>
+            <button class="btn btn-primary apply-theme" data-theme="sunset">Apply</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<!-- Application Scripts -->
+<script src="js/vendor/modernizr-3.12.0.min.js" defer></script>
+<script src="js/app.js" type="module"></script>
+<script>
+  document.querySelectorAll('.apply-theme').forEach(button => {
+    button.addEventListener('click', () => {
+      const theme = button.getAttribute('data-theme');
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    });
+  });
+
+  // Load the saved theme from localStorage
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  });
+</script>
+
+<!-- Service Worker Registration -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registration successful');
+        })
+        .catch(err => {
+          console.error('ServiceWorker registration failed:', err);
+        });
+    });
+  }
+</script>
+</body>
+</html>

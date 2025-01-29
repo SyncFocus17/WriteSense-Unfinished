@@ -1,0 +1,276 @@
+/* themes.css - WriteSense Theme System */
+
+/* Theme Configuration */
+:root {
+  /* Default Light Theme */
+  --primary-color-50: #EEF2FF;
+  --primary-color-100: #E0E7FF;
+  --primary-color-200: #C7D2FE;
+  --primary-color-300: #A5B4FC;
+  --primary-color-400: #818CF8;
+  --primary-color-500: #2563EB; /* Primary Brand Color */
+  --primary-color-600: #4F46E5;
+  --primary-color-700: #4338CA;
+  --primary-color-800: #3730A3;
+  --primary-color-900: #312E81;
+
+  /* Semantic Colors */
+  --success-50: #ECFDF5;
+  --success-500: #10B981;
+  --success-700: #047857;
+
+  --warning-50: #FFFBEB;
+  --warning-500: #F59E0B;
+  --warning-700: #B45309;
+
+  --error-50: #FEF2F2;
+  --error-500: #EF4444;
+  --error-700: #B91C1C;
+
+  --info-50: #EFF6FF;
+  --info-500: #3B82F6;
+  --info-700: #1D4ED8;
+}
+
+/* Light Theme (Default) */
+[data-theme="light"] {
+  /* Base Colors */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F3F4F6;
+  --bg-tertiary: #E5E7EB;
+
+  /* Text Colors */
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+  --text-tertiary: #6B7280;
+  --text-placeholder: #9CA3AF;
+
+  /* Border Colors */
+  --border-color: #E5E7EB;
+  --border-color-hover: #D1D5DB;
+
+  /* Shadow Colors */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Component Colors */
+  --input-bg: #FFFFFF;
+  --input-border: #D1D5DB;
+  --input-focus: var(--primary-color-500);
+
+  /* Selection Colors */
+  --selection-bg: var(--primary-color-100);
+  --selection-text: var(--primary-color-900);
+
+  /* Syntax Highlighting */
+  --code-bg: #F9FAFB;
+  --code-text: #1F2937;
+  --code-comment: #6B7280;
+  --code-keyword: #4F46E5;
+  --code-string: #059669;
+  --code-number: #D97706;
+  --code-function: #2563EB;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  /* Base Colors */
+  --bg-primary: #111827;
+  --bg-secondary: #1F2937;
+  --bg-tertiary: #374151;
+
+  /* Text Colors */
+  --text-primary: #F9FAFB;
+  --text-secondary: #E5E7EB;
+  --text-tertiary: #D1D5DB;
+  --text-placeholder: #6B7280;
+
+  /* Border Colors */
+  --border-color: #374151;
+  --border-color-hover: #4B5563;
+
+  /* Shadow Colors */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+
+  /* Component Colors */
+  --input-bg: #1F2937;
+  --input-border: #4B5563;
+  --input-focus: var(--primary-color-400);
+
+  /* Selection Colors */
+  --selection-bg: var(--primary-color-700);
+  --selection-text: #FFFFFF;
+
+  /* Syntax Highlighting */
+  --code-bg: #1F2937;
+  --code-text: #E5E7EB;
+  --code-comment: #9CA3AF;
+  --code-keyword: #818CF8;
+  --code-string: #34D399;
+  --code-number: #FBBF24;
+  --code-function: #60A5FA;
+}
+
+/* High Contrast Theme */
+[data-theme="high-contrast"] {
+  --bg-primary: #000000;
+  --bg-secondary: #1A1A1A;
+  --bg-tertiary: #2A2A2A;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #FFFFFF;
+  --text-tertiary: #E0E0E0;
+
+  --primary-color-500: #FFFF00;
+  --border-color: #FFFFFF;
+
+  --shadow-sm: 0 0 0 1px #FFFFFF;
+  --shadow-md: 0 0 0 2px #FFFFFF;
+  --shadow-lg: 0 0 0 3px #FFFFFF;
+}
+
+/* Color Schemes */
+
+/* Ocean Theme */
+[data-theme="ocean"] {
+  --primary-color-500: #0EA5E9;
+  --primary-color-600: #0284C7;
+  --primary-color-700: #0369A1;
+
+  --bg-primary: #F0F9FF;
+  --bg-secondary: #E0F2FE;
+  --bg-tertiary: #BAE6FD;
+}
+
+/* Forest Theme */
+[data-theme="forest"] {
+  --primary-color-500: #059669;
+  --primary-color-600: #047857;
+  --primary-color-700: #065F46;
+
+  --bg-primary: #ECFDF5;
+  --bg-secondary: #D1FAE5;
+  --bg-tertiary: #A7F3D0;
+}
+
+/* Sunset Theme */
+[data-theme="sunset"] {
+  --primary-color-500: #F97316;
+  --primary-color-600: #EA580C;
+  --primary-color-700: #C2410C;
+
+  --bg-primary: #FFF7ED;
+  --bg-secondary: #FFEDD5;
+  --bg-tertiary: #FED7AA;
+}
+
+/* Theme Transitions */
+body {
+  transition: background-color 0.3s ease,
+  color 0.3s ease,
+  border-color 0.3s ease;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+}
+
+/* Focus Styles */
+[data-theme="light"] :focus-visible {
+  outline: 2px solid var(--primary-color-500);
+  outline-offset: 2px;
+}
+
+[data-theme="dark"] :focus-visible {
+  outline: 2px solid var(--primary-color-400);
+  outline-offset: 2px;
+}
+
+/* Selection Styles */
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+/* Component-specific Theme Overrides */
+
+/* Button Variants */
+.btn-primary {
+  background: var(--primary-color-500);
+  color: white;
+}
+
+.btn-secondary {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Input Styles */
+input, textarea, select {
+  background: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-primary);
+}
+
+/* Card Styles */
+.card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+}
+
+/* Modal Styles */
+.modal {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+}
+
+/* Toast Variants */
+.toast-success {
+  background: var(--success-50);
+  border-color: var(--success-500);
+}
+
+.toast-error {
+  background: var(--error-50);
+  border-color: var(--error-500);
+}
+
+.toast-warning {
+  background: var(--warning-50);
+  border-color: var(--warning-500);
+}
+
+/* Code Block Theme */
+pre code {
+  background: var(--code-bg);
+  color: var(--code-text);
+}
+
+.code-comment { color: var(--code-comment); }
+.code-keyword { color: var(--code-keyword); }
+.code-string { color: var(--code-string); }
+.code-number { color: var(--code-number); }
+.code-function { color: var(--code-function); }
+
+/* System Theme Detection */
+@media (prefers-color-scheme: dark) {
+  [data-theme="system"] {
+    --bg-primary: #111827;
+    --bg-secondary: #1F2937;
+    /* Include all dark theme variables */
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  [data-theme="system"] {
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F3F4F6;
+    /* Include all light theme variables */
+  }
+}
